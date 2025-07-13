@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="text-white">
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-tr from-[#0f0c29] via-[#302b63] to-[#24243e] animate-gradient"
+      ></div>
+      <div class="absolute w-full h-full overflow-hidden">
+        <div class="bubble top-[20%] left-[10%]"></div>
+        <div class="bubble top-[40%] left-[70%] delay-2000"></div>
+        <div class="bubble top-[60%] left-[30%] delay-4000"></div>
+        <div class="bubble top-[80%] left-[80%] delay-1000"></div>
+        <div class="bubble top-[10%] left-[50%] delay-3000"></div>
+      </div>
+    </div>
+
+    <section class="sm:w-[30%] w-[90%] mx-auto mt-[120px] grid gap-y-5">
+      <div
+        class="bg-white/20 backdrop-blur-md stats grid grid-cols-[70%_minmax(0,1fr)] items-center justify-center p-[10px] rounded-xl border-2 border-white"
+      >
+        <div>
+          <h1 class="font-bold text-2xl">Todo List</h1>
+          <p class="text-gray-400 animate-bounce">Keep it up!</p>
+          <div id="progressBar"></div>
+        </div>
+        <div class="text-center grid items-center">
+          <div class="relative size-30">
+            <svg
+              class="size-full -rotate-90"
+              viewBox="0 0 36 36"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="18"
+                cy="18"
+                r="16"
+                fill="none"
+                class="stroke-current text-gray-200 dark:text-neutral-700"
+                stroke-width="2"
+              ></circle>
+
+              <circle
+                cx="18"
+                cy="18"
+                r="16"
+                fill="none"
+                class="progressCircle stroke-current text-blue-600 dark:text-blue-500"
+                stroke-width="2"
+                stroke-dasharray="100"
+                stroke-dashoffset="100"
+                stroke-linecap="round"
+              ></circle>
+            </svg>
+            <div
+              class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2"
+            >
+              <span
+                class="progressText text-center text-2xl font-bold text-blue-600 dark:text-blue-500"
+                >0/0</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form class="grid grid-cols-[88%_minmax(0,1fr)] items-center gap-x-2">
+          <input
+            type="text"
+            class="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            placeholder="Write Task Here..."
+          />
+          <button
+            type="submit"
+            role="button"
+            class="text-3xl font-bold bg-blue-900 rounded-full p-1 cursor-pointer"
+            id="addTask"
+          >
+            +
+          </button>
+        </form>
+      </div>
+      <div>
+        <ul class="taskContainer flex flex-col gap-y-4"></ul>
+      </div>
+    </section>
+    <script src="./node_modules/preline/dist/preline.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  </body>
+</html>
